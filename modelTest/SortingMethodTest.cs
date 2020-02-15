@@ -3,12 +3,20 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace modelTest
 {
+
     [TestClass]
     public class SortingMethodTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void InsertionSortTes()
         {
         }
+
+        [TestMethod]
+        public void SelectionSortTest()
+        {
+        }
+
+
     }
 }
