@@ -16,7 +16,7 @@ namespace model
                 int current = A[i];
                 int j = i;
 
-                while (j > 0 && A[j-1] > current)
+                while (j > 0 && A[j-1] >= current)
                 {
                     A[j] = A[j - 1];
                     j--;
@@ -34,7 +34,7 @@ namespace model
 
                 for (int j = i+1; j < A.Length; j++)
                 {
-                    if (A[j] < min)
+                    if (A[j] <= min)
                     {
                         min = A[j];
                         c = j;
