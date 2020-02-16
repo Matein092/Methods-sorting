@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace model
 {
@@ -24,8 +20,9 @@ namespace model
         public int[] GenerateDataRandomly(int size)
         {
             int[] array = new int[size];
-
-            var random = new Random(Environment.TickCount());
+            
+            var seed = Environment.TickCount;
+            var random = new Random(seed);
 
             for (int i = 0; i < array.Length; i++)
             {
@@ -49,7 +46,7 @@ namespace model
         }
 
 
-        public int[] GenerateDataDecreasingly()
+        public int[] GenerateDataDecreasingly(int size)
         {
             int[] array = new int[size];
 
