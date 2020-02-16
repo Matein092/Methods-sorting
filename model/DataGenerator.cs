@@ -2,7 +2,7 @@
 
 namespace model
 {
-    class DataGenerator
+    public class DataGenerator
     {
         public const int TEN_TO_ONE = 10;
         public const int TEN_TO_TWO = 100;
