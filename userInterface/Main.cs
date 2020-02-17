@@ -1,20 +1,20 @@
 ﻿using System;
 
-using model;
+using modelTest;
 using System.Diagnostics;
 
 
 
 namespace userInterface
 {
-    public class Program
+    public class Main
     {
         private SortingMethod sortingMethod;
         private DataGenerator dataGenerator;
 
         private Stopwatch sw;
 
-        public Program()
+        public Main()
         {
             this.sortingMethod = new SortingMethod();
             this.dataGenerator = new DataGenerator();
@@ -250,7 +250,7 @@ namespace userInterface
 
         static void Main(string[] args)
         {
-            Program p = new Program();
+            Main p = new Main();
         }
     }
 }
