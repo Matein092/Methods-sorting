@@ -222,7 +222,7 @@ namespace userInterface
             int[] ascendingly = this.dataGenerator.GenerateDataIncreasingly(DataGenerator.TEN_TO_FIVE);
             int[] descending = this.dataGenerator.GenerateDataDecreasingly(DataGenerator.TEN_TO_FIVE);
 
-            //Metodos de insercion para la prueba de 10^4
+            //Metodos de insercion para la prueba de 10^5
             sw.Start();
             this.sortingMethod.InsertionSort(random);
             Console.WriteLine("============================================= \nDatos aleatorios \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} milisegundos", "InsertionSort", DataGenerator.TEN_TO_FIVE, sw.Elapsed.TotalMilliseconds);
@@ -238,7 +238,7 @@ namespace userInterface
             Console.WriteLine("============================================= \nDatos descendentemente \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} milisegundos", "InsertionSort", DataGenerator.TEN_TO_FIVE, sw.Elapsed.TotalMilliseconds);
             sw.Reset();
 
-            //Metodos de seleccion para la prueba de 10^4
+            //Metodos de seleccion para la prueba de 10^5
             sw.Start();
             this.sortingMethod.SelectionSort(random);
             Console.WriteLine("============================================= \nDatos aleatorios \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} milisegundos", "SelectionSort", DataGenerator.TEN_TO_FIVE, sw.Elapsed.TotalMilliseconds);
