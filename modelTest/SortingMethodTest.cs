@@ -134,19 +134,6 @@ namespace modelTest
                 Assert.IsTrue(ascendingArray[i] == ascending[i]);
                 Assert.IsTrue(descendingArray[i] == descending[i]);
             }
-
-            // Arrange
-           
-
-
-            // Act
-
-
-            // Assert
-
-
-
-
         }
 
         [TestMethod]
@@ -240,9 +227,6 @@ namespace modelTest
                 Assert.IsTrue(ascendingArray[i] == ascending[i]);
                 Assert.IsTrue(descendingArray[i] == descending[i]);
             }
-
-          
-
         }
 
         [TestMethod]
