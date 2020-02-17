@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using model;
+using System.Diagnostics;
 
 namespace userInterface
 {
@@ -11,6 +8,8 @@ namespace userInterface
     {
         private SortingMethod sortingMethod;
         private DataGenerator dataGenerator;
+
+        private Stopwatch sw;
 
         public Program()
         {
@@ -22,23 +21,116 @@ namespace userInterface
 
         private void startTest()
         {
-            int[] random = this.dataGenerator.GenerateDataDecreasingly(DataGenerator.TEN_TO_TWO);
+            testTime_1();
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
 
-            Console.WriteLine("Array desorganizado");
-            for (int i = 0; i < random.Length; i++)
-            {
-                Console.WriteLine("{0} = {1}", (i + 1), random[i]);
-            }
+            testTime_2();
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
 
-            sortingMethod.SelectionSort(random);
+            testTime_3();
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
 
-            Console.WriteLine("\n \nArray organizado");
-            for (int i = 0; i < random.Length; i++)
-            {
-                Console.WriteLine("{0} = {1}", (i + 1), random[i]);
-            }
+            testTime_4();
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
+
+            testTime_5();
+            Console.WriteLine("----------------------------------------------------------------------------------------------------");
+
 
             Console.ReadLine();
+        }
+
+        private void testTime_1()
+        {
+            this.sw = new Stopwatch();
+
+            int[] random = this.dataGenerator.GenerateDataRandomly(DataGenerator.TEN_TO_ONE);
+            int[] ascendingly = this.dataGenerator.GenerateDataIncreasingly(DataGenerator.TEN_TO_ONE);
+            int[] descending = this.dataGenerator.GenerateDataDecreasingly(DataGenerator.TEN_TO_ONE);
+
+            //Metodos de insercion para la prueba de 10^1
+            sw.Start();
+            this.sortingMethod.InsertionSort(random);
+            Console.WriteLine("============================================= \nDatos aleatorios \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} segundos", "InsertionSort", DataGenerator.TEN_TO_ONE, sw.Elapsed.TotalMilliseconds);
+            sw.Reset();
+
+            sw.Start();
+            this.sortingMethod.InsertionSort(ascendingly);
+            Console.WriteLine("============================================= \nDatos ascendentemente \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} segundos", "InsertionSort", DataGenerator.TEN_TO_ONE, sw.Elapsed.TotalMilliseconds);
+            sw.Reset();
+
+            sw.Start();
+            this.sortingMethod.InsertionSort(descending);
+            Console.WriteLine("============================================= \nDatos descendentemente \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} segundos", "InsertionSort", DataGenerator.TEN_TO_ONE, sw.Elapsed.TotalMilliseconds);
+            sw.Reset();
+
+            //Metodos de seleccion para la prueba de 10^1
+            sw.Start();
+            this.sortingMethod.SelectionSort(random);
+            Console.WriteLine("============================================= \nDatos aleatorios \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} segundos", "SelectionSort", DataGenerator.TEN_TO_ONE, sw.Elapsed.TotalMilliseconds);
+            sw.Reset();
+
+            sw.Start();
+            this.sortingMethod.SelectionSort(ascendingly);
+            Console.WriteLine("============================================= \nDatos ascendentemente \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} segundos", "SelectionSort", DataGenerator.TEN_TO_ONE, sw.Elapsed.TotalMilliseconds);
+            sw.Reset();
+
+            sw.Start();
+            this.sortingMethod.SelectionSort(descending);
+            Console.WriteLine("============================================= \nDatos descendentemente \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} segundos", "SelectionSort", DataGenerator.TEN_TO_ONE, sw.Elapsed.TotalMilliseconds);
+            sw.Reset();
+        }
+        private void testTime_2()
+        {
+            this.sw = new Stopwatch();
+
+            int[] random = this.dataGenerator.GenerateDataRandomly(DataGenerator.TEN_TO_TWO);
+            int[] ascendingly = this.dataGenerator.GenerateDataIncreasingly(DataGenerator.TEN_TO_TWO);
+            int[] descending = this.dataGenerator.GenerateDataDecreasingly(DataGenerator.TEN_TO_TWO);
+
+            //Metodos de insercion para la prueba de 10^2
+            sw.Start();
+            this.sortingMethod.InsertionSort(random);
+            Console.WriteLine("============================================= \nDatos aleatorios \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} segundos", "InsertionSort", DataGenerator.TEN_TO_TWO, sw.Elapsed.TotalMilliseconds);
+            sw.Reset();
+
+            sw.Start();
+            this.sortingMethod.InsertionSort(ascendingly);
+            Console.WriteLine("============================================= \nDatos ascendentemente \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} segundos", "InsertionSort", DataGenerator.TEN_TO_TWO, sw.Elapsed.TotalMilliseconds);
+            sw.Reset();
+
+            sw.Start();
+            this.sortingMethod.InsertionSort(descending);
+            Console.WriteLine("============================================= \nDatos descendentemente \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} segundos", "InsertionSort", DataGenerator.TEN_TO_TWO, sw.Elapsed.TotalMilliseconds);
+            sw.Reset();
+
+            //Metodos de seleccion para la prueba de 10^2
+            sw.Start();
+            this.sortingMethod.SelectionSort(random);
+            Console.WriteLine("============================================= \nDatos aleatorios \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} segundos", "SelectionSort", DataGenerator.TEN_TO_TWO, sw.Elapsed.TotalMilliseconds);
+            sw.Reset();
+
+            sw.Start();
+            this.sortingMethod.SelectionSort(ascendingly);
+            Console.WriteLine("============================================= \nDatos ascendentemente \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} segundos", "SelectionSort", DataGenerator.TEN_TO_TWO, sw.Elapsed.TotalMilliseconds);
+            sw.Reset();
+
+            sw.Start();
+            this.sortingMethod.SelectionSort(descending);
+            Console.WriteLine("============================================= \nDatos descendentemente \nMetodo: {0} \ntamano: {1} datos \ntiempo: {2} segundos", "SelectionSort", DataGenerator.TEN_TO_TWO, sw.Elapsed.TotalMilliseconds);
+            sw.Reset();
+        }
+        private void testTime_3()
+        {
+
+        }
+        private void testTime_4()
+        {
+
+        }
+        private void testTime_5()
+        {
+
         }
 
         static void Main(string[] args)
