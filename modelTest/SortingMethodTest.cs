@@ -115,6 +115,7 @@ namespace modelTest
         [TestMethod]
         public void InsertionSortTes()
         {
+
             SetUpScenary1();
 
             this.SortingMethod.InsertionSort(this.disorganizedArray);
@@ -133,11 +134,25 @@ namespace modelTest
                 Assert.IsTrue(ascendingArray[i] == ascending[i]);
                 Assert.IsTrue(descendingArray[i] == descending[i]);
             }
+
+            // Arrange
+           
+
+
+            // Act
+
+
+            // Assert
+
+
+
+
         }
 
         [TestMethod]
         public void SelectionSortTest()
         {
+
             SetUpScenary1();
 
             this.SortingMethod.SelectionSort(this.disorganizedArray);
@@ -225,6 +240,9 @@ namespace modelTest
                 Assert.IsTrue(ascendingArray[i] == ascending[i]);
                 Assert.IsTrue(descendingArray[i] == descending[i]);
             }
+
+          
+
         }
 
         [TestMethod]
