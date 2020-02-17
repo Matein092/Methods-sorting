@@ -49,10 +49,12 @@ namespace model
         public int[] GenerateDataDecreasingly(int size)
         {
             int[] array = new int[size];
+            int pos = 0;
 
             for (int i = array.Length - 1; i >= 0; i--)
             {
-                array[i] = i;
+                array[pos] = i;
+                pos++;
             }
 
             return array;
