@@ -3,13 +3,6 @@
 using model;
 using System.Diagnostics;
 
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using model;
-using modelTest;
 
 
 namespace userInterface
@@ -18,7 +11,6 @@ namespace userInterface
     {
         private SortingMethod sortingMethod;
         private DataGenerator dataGenerator;
-        private SortingMethodTest sortingMethodTest;
 
         private Stopwatch sw;
 
@@ -26,7 +18,6 @@ namespace userInterface
         {
             this.sortingMethod = new SortingMethod();
             this.dataGenerator = new DataGenerator();
-            this.sortingMethodTest = new SortingMethodTest();
 
             startTest();
         }
@@ -36,10 +27,10 @@ namespace userInterface
             Console.WriteLine("-----------------------------------------10^1-----------------------------------------------------------");
             testTime_1();
 
-            Console.WriteLine("------------------------------------------10^2----------------------------------------------------------");
+            Console.WriteLine("-----------------------------------------10^2----------------------------------------------------------");
             testTime_2();
 
-            Console.WriteLine("------------------------------------------10^3----------------------------------------------------------");
+            Console.WriteLine("-----------------------------------------10^3----------------------------------------------------------");
             testTime_3();
         
             Console.WriteLine("-----------------------------------------10^4----------------------------------------------------------");
@@ -260,65 +251,6 @@ namespace userInterface
         static void Main(string[] args)
         {
             Program p = new Program();
-
-            /**
-
-            // I1
-
-            Stopwatch timeMeasure = new Stopwatch();
-            timeMeasure.Start();
-
-            p.sortingMethodTest.InsertionSortTes();
-
-            timeMeasure.Stop();
-            Console.WriteLine($"Tiempo I1: {timeMeasure.Elapsed.TotalMilliseconds} ms");
-
-
-            // I2
-
-            Stopwatch timeMeasure2 = new Stopwatch();
-            timeMeasure2.Start();
-
-            p.sortingMethodTest.InsertionSortTes_2();
-
-            timeMeasure2.Stop();
-            Console.WriteLine($"Tiempo I2: {timeMeasure2.Elapsed.TotalMilliseconds} ms");
-
-
-            // I3
-
-            Stopwatch timeMeasure3 = new Stopwatch();
-            timeMeasure3.Start();
-
-            p.sortingMethodTest.InsertionSortTes_3();
-
-            timeMeasure3.Stop();
-            Console.WriteLine($"Tiempo I3: {timeMeasure3.Elapsed.TotalMilliseconds} ms");
-
-
-            // I4
-
-            Stopwatch timeMeasure4 = new Stopwatch();
-            timeMeasure4.Start();
-
-            p.sortingMethodTest.InsertionSortTes_4();
-
-            timeMeasure4.Stop();
-            Console.WriteLine($"Tiempo I4: {timeMeasure4.Elapsed.TotalMilliseconds} ms");
-
-
-            // I5
-
-            Stopwatch timeMeasure5 = new Stopwatch();
-            timeMeasure5.Start();
-
-            p.sortingMethodTest.InsertionSortTes_5();
-
-            timeMeasure5.Stop();
-            Console.WriteLine($"Tiempo I5: {timeMeasure5.Elapsed.TotalMilliseconds} ms");
-
-            **/
-
         }
     }
 }
